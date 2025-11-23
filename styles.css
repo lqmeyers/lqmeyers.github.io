@@ -138,6 +138,38 @@ main {
     margin-top: 2rem;
 }
 
+/* Horizontal Scroll Container for Featured Work */
+.horizontal-scroll-container {
+    display: flex;
+    gap: 2rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding: 2rem 0;
+    margin-top: 2rem;
+    -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-track {
+    background: var(--bg-darker);
+    border-radius: 4px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
 .image-card {
     background-color: var(--bg-card);
     border-radius: 8px;
@@ -148,6 +180,27 @@ main {
 .image-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* Clickable Cards in Horizontal Scroll */
+.clickable-card {
+    flex: 0 0 320px;
+    scroll-snap-align: center;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+}
+
+.clickable-card:hover {
+    transform: translateY(-10px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(74, 158, 255, 0.4);
+}
+
+.clickable-card:active {
+    transform: translateY(-5px) scale(1.01);
 }
 
 .image-placeholder {
@@ -348,6 +401,15 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .horizontal-scroll-container {
+        gap: 1rem;
+        padding: 1rem 0;
+    }
+
+    .clickable-card {
+        flex: 0 0 280px;
+    }
+
     .profile-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -377,6 +439,10 @@ footer {
 
     h3 {
         font-size: 1.3rem;
+    }
+
+    .clickable-card {
+        flex: 0 0 240px;
     }
 
     .project-images {
