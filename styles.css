@@ -1,0 +1,388 @@
+/* Global Styles - Dark Mode Theme */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-dark: #1a1a1a;
+    --bg-darker: #0f0f0f;
+    --bg-card: #252525;
+    --text-light: #e0e0e0;
+    --text-white: #ffffff;
+    --accent-color: #4a9eff;
+    --border-color: #404040;
+    --hover-bg: #333333;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Typography - Serif for titles */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', 'Times New Roman', Times, serif;
+    color: var(--text-white);
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+}
+
+/* Navigation Bar */
+.navbar {
+    background-color: var(--bg-darker);
+    border-bottom: 1px solid var(--border-color);
+    padding: 1.5rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.site-title {
+    color: var(--text-white);
+    font-size: 2rem;
+    margin: 0;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--text-white);
+    background-color: var(--hover-bg);
+}
+
+/* Main Container */
+main {
+    flex: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 0;
+    margin-bottom: 3rem;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    color: var(--text-light);
+}
+
+/* Image Grid Layout */
+.gallery,
+.recent-updates,
+.publications {
+    margin: 4rem 0;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.image-card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.image-placeholder {
+    background: linear-gradient(135deg, #2a2a2a 0%, #3a3a3a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+    font-size: 1.2rem;
+    font-weight: 300;
+    border: 2px dashed var(--border-color);
+}
+
+.image-placeholder {
+    height: 250px;
+}
+
+.image-placeholder.medium {
+    height: 200px;
+}
+
+.image-placeholder.large {
+    height: 300px;
+}
+
+.image-caption {
+    padding: 1rem;
+    text-align: center;
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+/* Profile Section (About Page) */
+.about-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.profile {
+    margin: 3rem 0;
+}
+
+.profile-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.profile-image-container {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-text h3 {
+    margin-top: 0;
+}
+
+.profile-text p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+}
+
+/* Skills Section */
+.skills {
+    margin: 4rem 0;
+}
+
+.skills-content {
+    background-color: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-color);
+}
+
+/* Research & Projects */
+.research-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.research-header p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.projects {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.project-card {
+    background-color: var(--bg-card);
+    border-radius: 8px;
+    padding: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateX(10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-images {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+
+.project-content h3 {
+    margin-top: 0;
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.project-link:hover {
+    color: var(--text-white);
+}
+
+/* Project Detail Pages */
+.project-detail-header {
+    margin-bottom: 3rem;
+}
+
+.back-link {
+    display: inline-block;
+    color: var(--accent-color);
+    text-decoration: none;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--text-white);
+}
+
+.project-overview,
+.methodology,
+.findings,
+.collaborations,
+.impact {
+    margin: 3rem 0;
+}
+
+.project-overview p,
+.methodology p,
+.findings p,
+.collaborations p,
+.impact p {
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: var(--bg-darker);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+    border-top: 1px solid var(--border-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .site-title {
+        font-size: 1.8rem;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+    }
+
+    .image-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+
+    .project-images {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .container {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.3rem;
+    }
+
+    .project-images {
+        grid-template-columns: 1fr;
+    }
+}
