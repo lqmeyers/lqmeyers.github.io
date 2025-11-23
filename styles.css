@@ -14,6 +14,9 @@
     --accent-color: #4a9eff;
     --border-color: #404040;
     --hover-bg: #333333;
+    --card-width-desktop: 320px;
+    --card-width-tablet: 280px;
+    --card-width-mobile: 240px;
 }
 
 body {
@@ -184,7 +187,7 @@ main {
 
 /* Clickable Cards in Horizontal Scroll */
 .clickable-card {
-    flex: 0 0 320px;
+    flex: 0 0 var(--card-width-desktop);
     scroll-snap-align: center;
     text-decoration: none;
     color: inherit;
@@ -406,7 +409,7 @@ footer {
     }
 
     .clickable-card {
-        flex: 0 0 280px;
+        flex: 0 0 var(--card-width-tablet);
     }
 
     .profile-content {
@@ -441,7 +444,7 @@ footer {
     }
 
     .clickable-card {
-        flex: 0 0 240px;
+        flex: 0 0 var(--card-width-mobile);
     }
 
     .project-images {
