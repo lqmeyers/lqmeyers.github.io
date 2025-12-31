@@ -26,25 +26,74 @@
 
         <section class="gallery">
             <h3>Featured Work</h3>
-            <div class="horizontal-scroll-container">
-                <a href="project1.html" class="image-card clickable-card">
-                    <div class="image-placeholder">
-                        <span>Image 1</span>
+            <div class="carousel-container">
+                <div class="carousel-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="carousel-slide active" data-project="project1">
+                        <div class="slide-content">
+                            <div class="scatterplot-panel">
+                                <h4>Interactive 3D Visualization</h4>
+                                <div id="scatterplot-container-1" class="scatterplot-canvas"></div>
+                            </div>
+                            <div class="image-panel">
+                                <h4>Featured Image</h4>
+                                <div id="image-display-1" class="image-display">
+                                    <div class="image-placeholder">
+                                        <span>Image 1</span>
+                                    </div>
+                                </div>
+                                <p class="image-caption">Featured Project 1</p>
+                                <a href="project1.html" class="project-link">View Details →</a>
+                            </div>
+                        </div>
                     </div>
-                    <p class="image-caption">Featured Project 1</p>
-                </a>
-                <a href="project2.html" class="image-card clickable-card">
-                    <div class="image-placeholder">
-                        <span>Image 2</span>
+                    
+                    <!-- Slide 2 -->
+                    <div class="carousel-slide" data-project="project2">
+                        <div class="slide-content">
+                            <div class="scatterplot-panel">
+                                <h4>Interactive 3D Visualization</h4>
+                                <div id="scatterplot-container-2" class="scatterplot-canvas"></div>
+                            </div>
+                            <div class="image-panel">
+                                <h4>Featured Image</h4>
+                                <div id="image-display-2" class="image-display">
+                                    <div class="image-placeholder">
+                                        <span>Image 2</span>
+                                    </div>
+                                </div>
+                                <p class="image-caption">Featured Project 2</p>
+                                <a href="project2.html" class="project-link">View Details →</a>
+                            </div>
+                        </div>
                     </div>
-                    <p class="image-caption">Featured Project 2</p>
-                </a>
-                <a href="project3.html" class="image-card clickable-card">
-                    <div class="image-placeholder">
-                        <span>Image 3</span>
+                    
+                    <!-- Slide 3 -->
+                    <div class="carousel-slide" data-project="project3">
+                        <div class="slide-content">
+                            <div class="scatterplot-panel">
+                                <h4>Interactive 3D Visualization</h4>
+                                <div id="scatterplot-container-3" class="scatterplot-canvas"></div>
+                            </div>
+                            <div class="image-panel">
+                                <h4>Featured Image</h4>
+                                <div id="image-display-3" class="image-display">
+                                    <div class="image-placeholder">
+                                        <span>Image 3</span>
+                                    </div>
+                                </div>
+                                <p class="image-caption">Featured Project 3</p>
+                                <a href="project3.html" class="project-link">View Details →</a>
+                            </div>
+                        </div>
                     </div>
-                    <p class="image-caption">Featured Project 3</p>
-                </a>
+                </div>
+                
+                <!-- Navigation Controls -->
+                <div class="carousel-controls">
+                    <button class="carousel-btn prev-btn" aria-label="Previous slide">‹</button>
+                    <button class="carousel-btn next-btn" aria-label="Next slide">›</button>
+                </div>
             </div>
         </section>
 
@@ -70,5 +119,19 @@
     <footer>
         <p>&copy; 2024 My Portfolio. All rights reserved.</p>
     </footer>
+    
+    <!-- 
+        To enable full Three.js 3D visualization:
+        1. Uncomment the line below to load Three.js from CDN
+        2. The carousel.js will automatically detect Three.js and use it for rendering
+        
+        <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
+        
+        Or download Three.js locally and reference it:
+        <script src="three.min.js"></script>
+    -->
+    
+    <!-- Carousel and Visualization Script -->
+    <script src="carousel.js"></script>
 </body>
 </html>
