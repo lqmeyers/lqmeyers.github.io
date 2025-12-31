@@ -28,6 +28,7 @@ class FeaturedWorkCarousel {
         this.prevBtn = document.querySelector('.prev-btn');
         this.nextBtn = document.querySelector('.next-btn');
         this.scatterplots = {};
+        this.keyboardHandler = null;
         
         this.init();
     }
@@ -40,16 +41,34 @@ class FeaturedWorkCarousel {
         }
         
         // Add keyboard navigation
-        document.addEventListener('keydown', (e) => {
+        this.keyboardHandler = (e) => {
             if (e.key === 'ArrowLeft') {
                 this.prevSlide();
             } else if (e.key === 'ArrowRight') {
                 this.nextSlide();
             }
-        });
+        };
+        document.addEventListener('keydown', this.keyboardHandler);
         
         // Initialize 3D scatterplots for each slide
         this.initScatterplots();
+    }
+    
+    destroy() {
+        // Cleanup method to remove event listeners and stop animations
+        if (this.keyboardHandler) {
+            document.removeEventListener('keydown', this.keyboardHandler);
+        }
+        
+        // Cleanup scatterplots
+        Object.values(this.scatterplots).forEach(plot => {
+            if (plot.animationId) {
+                cancelAnimationFrame(plot.animationId);
+            }
+            if (plot.handleResize) {
+                window.removeEventListener('resize', plot.handleResize);
+            }
+        });
     }
     
     nextSlide() {
@@ -104,6 +123,7 @@ class FeaturedWorkCarousel {
         
         // Animation state
         let rotation = 0;
+        let animationId = null;
         
         // Draw function
         const draw = () => {
@@ -161,7 +181,7 @@ class FeaturedWorkCarousel {
             rotation += 0.01;
             
             // Continue animation
-            requestAnimationFrame(draw);
+            animationId = requestAnimationFrame(draw);
         };
         
         // Start animation
@@ -176,6 +196,7 @@ class FeaturedWorkCarousel {
         
         return {
             canvas,
+            animationId,
             handleResize
         };
     }
