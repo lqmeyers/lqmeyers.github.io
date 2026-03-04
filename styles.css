@@ -141,6 +141,10 @@ main {
     margin-top: 2rem;
 }
 
+.recent-updates .image-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 /* Horizontal Scroll Container for Featured Work */
 .horizontal-scroll-container {
     display: flex;
@@ -309,6 +313,7 @@ main {
     border-radius: 8px;
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
 }
 
 .image-card:hover {
@@ -383,6 +388,15 @@ main {
 .profile-image-container {
     display: flex;
     justify-content: center;
+}
+
+.profile-image {
+    width: clamp(500px, 22vw, 800px);
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
 }
 
 .profile-text h3 {
@@ -532,6 +546,10 @@ footer {
 
     .image-grid {
         grid-template-columns: 1fr;
+    }
+
+    .recent-updates .image-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .horizontal-scroll-container {
