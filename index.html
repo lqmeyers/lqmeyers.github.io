@@ -1,66 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Home</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <h1 class="site-title">Luke Meyers</h1>
-            <ul class="nav-links">
-                <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="about.html">About Me</a></li>
-                <li><a href="research.html">Research</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <main class="container">
-       <section class="welcome">
-                <div class="profile-image-container">
-                    <img src="assets/IMG_9839.JPEG" alt="Photo with bat" class="profile-image">
-                </div>
-                <p class="image-caption">Puerto Rican Mustached Bat, Pteronotus portoricensis</p>
-       </section>
-
-        <section class="recent-updates">
-            <h3>Recent Updates</h3>
-            <div class="image-grid">
-                <div class="image-card">
-                    <div class="image-placeholder">
-                        <span>Image 5</span>
-                    </div>
-                    <p class="image-caption">SIDIM 2026</p>
-                </div>
-                <div class="image-card">
-                    <div class="image-placeholder">
-                        <span>Image 6</span>
-                    </div>
-                    <p class="image-caption">Conference Presentation</p>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 My Portfolio. All rights reserved.</p>
-    </footer>
-    
-    <!-- 
-        To enable full Three.js 3D visualization:
-        1. Uncomment the line below to load Three.js from CDN
-        2. The carousel.js will automatically detect Three.js and use it for rendering
-        
-        <script src="https://unpkg.com/three@0.128.0/build/three.min.js"></script>
-        
-        Or download Three.js locally and reference it:
-        <script src="three.min.js"></script>
-    -->
-    
-    <!-- Carousel and Visualization Script -->
-    <script src="carousel.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luke Meyers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Carlito:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
 </html>
