@@ -1,0 +1,71 @@
+.navbar {
+  background-color: var(--bg-darker);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.siteTitle {
+  color: var(--text-white);
+  font-size: 2rem;
+  margin: 0;
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  padding: 0;
+  margin: 0;
+}
+
+.navLinks a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+}
+
+.navLinks a:hover,
+.navLinks a.active {
+  color: var(--text-white);
+  background-color: var(--hover-bg);
+}
+
+/* NavLink sets the class via className prop — match the .active class here */
+.active {
+  color: var(--text-white) !important;
+  background-color: var(--hover-bg) !important;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .siteTitle {
+    font-size: 1.8rem;
+  }
+
+  .navLinks {
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+  }
+}

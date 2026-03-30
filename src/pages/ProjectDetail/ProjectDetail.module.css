@@ -1,0 +1,78 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.backLink {
+  display: inline-block;
+  color: var(--accent-color);
+  text-decoration: none;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.backLink:hover {
+  color: var(--text-white);
+}
+
+.header {
+  margin-bottom: 3rem;
+}
+
+.shortDescription {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  line-height: 1.7;
+  margin-top: 0.5rem;
+}
+
+.gallery {
+  margin: 2rem 0;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.galleryImage {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.section {
+  margin: 3rem 0;
+}
+
+.section h3 {
+  margin-top: 0;
+}
+
+.section p {
+  line-height: 1.8;
+  color: var(--text-light);
+}
+
+.pubList {
+  padding-left: 1.5rem;
+  margin-top: 1rem;
+}
+
+.pubList li {
+  margin-bottom: 0.75rem;
+  line-height: 1.7;
+  font-size: 1.5rem;
+  color: var(--text-light);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem 1rem;
+  }
+}
