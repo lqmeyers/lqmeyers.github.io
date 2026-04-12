@@ -13,12 +13,12 @@ export default function About() {
         <div className={styles.profileContent}>
           <div className={styles.profileImageContainer}>
             <img
-              src="/assets/IMG_9839.JPEG"
-              alt="Luke Meyers"
+              src="/assets/IMG_0281.JPEG"
+              alt="Luke Meyers with large tripod"
               className={styles.profileImage}
             />
             <p className={styles.imageCaption}>
-              <em>Pteronotus portoricensis</em>, Puerto Rican Mustached Bat. 
+              Using a large tripod to record wild pollinators visiting mango flowers at UPRRP using a basler video camera and Nvidia Jetson Orin. 
             </p>
           </div>
           <div className={styles.profileText}>

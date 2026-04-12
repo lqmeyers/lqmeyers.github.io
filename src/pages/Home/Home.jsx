@@ -32,12 +32,12 @@ export default function Home() {
         <p className={styles.sectionSubtitle}>
           The rise of transformer models has given us unique power to learn and combine multimodal data. From genomic sequences, tabular data, images, or audio files
           foundational models can learn powerful representations of the data that can be used for a wide range of downstream tasks. 
-          These representations not only can be used to improve model performance, interpretability, and generalization, but discober structure and new signals in
+          These representations not only can be used to improve model performance, interpretability, and generalization, but discover structure and new signals in
           complex biological data.
         </p>
         <p className={styles.sectionSubtitle}>
-          DINOv3 embeddings from a recent project classifying bat observations on inaturalist, where citizen science information is mixed in with scientific observations. 
-          See the repo <a href="https://github.com/lqmeyers/bat_bot" target="_blank" rel="noopener noreferrer">here</a> for more details on the project and the agentic system for 
+          Below is a demo visualization of image features from DINOv3 for a recent project classifying bat observations on Inaturalist, where citizen science information relevant for public health monitoring is mixed in with scientific research expedition observations. 
+          I built a mixture of experts style inference pipeline for multitask classification. See the repo <a href="https://github.com/lqmeyers/bat_bot" target="_blank" rel="noopener noreferrer">here</a> for more details on the project and the agentic system for 
           reasoning over both image and metadata embeddings.
         </p>
         <Suspense fallback={<div className={styles.viewerLoading}>Loading viewer…</div>}>
