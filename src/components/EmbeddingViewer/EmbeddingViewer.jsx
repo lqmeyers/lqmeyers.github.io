@@ -61,12 +61,39 @@ const circleTexture = makeCircleTexture()
 
 // ---------- helpers ----------
 
-function classToColor(className, allClasses) {
+function classToColor(className, allClasses, lightness) {
   const idx = allClasses.indexOf(className)
   const hue = (idx / allClasses.length) * 360
   const color = new THREE.Color()
-  color.setHSL(hue / 360, 0.7, 0.55)
+  color.setHSL(hue / 360, 0.7, lightness / 100)
   return color
+}
+
+/**
+ * Reads --embed-point-lightness from the active theme and re-reads it whenever
+ * the theme attributes on <html> change, so the point cloud stays legible when
+ * the canvas flips between a light and dark background.
+ */
+function usePointLightness() {
+  const read = () =>
+    Number(
+      getComputedStyle(document.documentElement)
+        .getPropertyValue('--embed-point-lightness')
+        .trim()
+    ) || 55
+
+  const [lightness, setLightness] = useState(read)
+
+  useEffect(() => {
+    const observer = new MutationObserver(() => setLightness(read()))
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['data-theme', 'data-embed', 'style'],
+    })
+    return () => observer.disconnect()
+  }, [])
+
+  return lightness
 }
 
 function generateSampleData() {
@@ -90,7 +117,7 @@ function generateSampleData() {
 
 // ---------- inner Three.js components ----------
 
-function PointCloud({ points, allClasses, onPointClick, onPointHover }) {
+function PointCloud({ points, allClasses, lightness, onPointClick, onPointHover }) {
   const meshRef = useRef()
 
   const { positions, colors } = useMemo(() => {
@@ -100,13 +127,13 @@ function PointCloud({ points, allClasses, onPointClick, onPointHover }) {
       pos[i * 3] = pt.x
       pos[i * 3 + 1] = pt.y
       pos[i * 3 + 2] = pt.z
-      const c = classToColor(pt.class, allClasses)
+      const c = classToColor(pt.class, allClasses, lightness)
       col[i * 3] = c.r
       col[i * 3 + 1] = c.g
       col[i * 3 + 2] = c.b
     })
     return { positions: pos, colors: col }
-  }, [points, allClasses])
+  }, [points, allClasses, lightness])
 
   function handleClick(e) {
     e.stopPropagation()
@@ -165,7 +192,7 @@ function HoverTooltip({ hoverInfo }) {
 
 // ---------- Legend ----------
 
-function Legend({ allClasses }) {
+function Legend({ allClasses, lightness }) {
   return (
     <div className={styles.legend}>
       {allClasses.map((cls, idx) => {
@@ -174,7 +201,7 @@ function Legend({ allClasses }) {
           <div key={cls} className={styles.legendItem}>
             <span
               className={styles.legendDot}
-              style={{ background: `hsl(${hue}, 70%, 55%)` }}
+              style={{ background: `hsl(${hue}, 70%, ${lightness}%)` }}
             />
             <span>{cls}</span>
           </div>
@@ -195,6 +222,7 @@ export default function EmbeddingViewer() {
   const [imgAspect, setImgAspect] = useState(null)
   const [isAutoRotating, setIsAutoRotating] = useState(VIEWER_CONFIG.autoRotate)
   const imageCache = useRef(new Map())
+  const pointLightness = usePointLightness()
 
   useEffect(() => {
     const { columns: cols } = VIEWER_CONFIG
@@ -279,7 +307,7 @@ export default function EmbeddingViewer() {
         {loading && <div className={styles.loadingOverlay}>Loading…</div>}
         <Canvas
           camera={{ position: VIEWER_CONFIG.cameraPosition, fov: VIEWER_CONFIG.cameraFov }}
-          style={{ background: '#0f0f0f' }}
+          style={{ background: 'var(--embed-bg)' }}
         >
           <ambientLight intensity={0.6} />
           <directionalLight position={[2, 2, 2]} intensity={0.4} />
@@ -287,6 +315,7 @@ export default function EmbeddingViewer() {
           <PointCloud
             points={points}
             allClasses={allClasses}
+            lightness={pointLightness}
             onPointClick={handlePointClick}
             onPointHover={setHoverInfo}
           />
@@ -298,7 +327,7 @@ export default function EmbeddingViewer() {
             makeDefault
           />
         </Canvas>
-        <Legend allClasses={allClasses} />
+        <Legend allClasses={allClasses} lightness={pointLightness} />
       </div>
 
       {/* Image panel */}

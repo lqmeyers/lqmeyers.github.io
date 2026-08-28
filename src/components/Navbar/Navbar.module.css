@@ -19,7 +19,7 @@
 }
 
 .siteTitle {
-  color: var(--text-white);
+  color: var(--heading-color);
   font-size: 2rem;
   margin: 0;
 }

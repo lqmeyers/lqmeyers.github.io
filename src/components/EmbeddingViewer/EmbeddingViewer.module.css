@@ -21,8 +21,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-light);
-  background: var(--bg-darker);
+  color: var(--embed-fg);
+  background: var(--embed-bg);
   z-index: 10;
   font-size: 1rem;
 }
@@ -58,12 +58,12 @@
 .imageLoading {
   width: 100%;
   height: 200px;
-  background: var(--bg-darker, #1a1a1a);
+  background: var(--embed-bg);
   border-radius: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #555;
+  color: var(--embed-muted);
   font-size: 0.85rem;
   margin-bottom: 1rem;
 }
@@ -73,9 +73,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #2a2a2a, #3a3a3a);
+  background: var(--embed-placeholder);
   border-radius: 6px;
-  color: #666;
+  color: var(--embed-muted);
   font-size: 0.9rem;
   margin-bottom: 1rem;
   border: 1px dashed var(--border-color);
@@ -86,7 +86,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #555;
+  color: var(--embed-muted);
   font-size: 0.9rem;
   text-align: center;
 }
@@ -122,11 +122,11 @@
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--embed-chip-bg);
   padding: 0.2rem 0.5rem;
   border-radius: 4px;
   font-size: 0.8rem;
-  color: var(--text-light);
+  color: var(--embed-fg);
 }
 
 .legendDot {
@@ -138,7 +138,7 @@
 
 /* Hover tooltip (rendered via drei <Html>) */
 .tooltip {
-  background: rgba(0, 0, 0, 0.85);
+  background: var(--embed-tooltip-bg);
   border: 1px solid var(--border-color);
   border-radius: 4px;
   padding: 0.4rem 0.6rem;
@@ -148,12 +148,12 @@
   flex-direction: column;
   gap: 0.1rem;
   font-size: 0.8rem;
-  color: var(--text-light);
+  color: var(--embed-fg);
   transform: translate(8px, -50%);
 }
 
 .tooltip strong {
-  color: var(--text-white);
+  color: var(--embed-fg-strong);
 }
 
 @media (max-width: 768px) {

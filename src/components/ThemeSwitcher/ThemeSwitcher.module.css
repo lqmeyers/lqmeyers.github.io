@@ -1,0 +1,166 @@
+/* Deliberately self-contained: this panel must stay readable in every theme
+   it is used to preview, so it does not consume the site's color tokens. */
+.panel {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 9999;
+  width: 240px;
+  padding: 0.85rem;
+  border-radius: 10px;
+  background: #16181d;
+  border: 1px solid #343841;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  color: #e6e8ec;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.8rem;
+  line-height: 1.4;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.6rem;
+}
+
+.title {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.close,
+.reopen {
+  background: none;
+  border: none;
+  color: #9aa0ab;
+  cursor: pointer;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0 0.2rem;
+}
+
+.close:hover {
+  color: #fff;
+}
+
+.reopen {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #16181d;
+  border: 1px solid #343841;
+  font-size: 1.1rem;
+}
+
+.themes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 0.75rem;
+}
+
+.themeButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.4rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  background: none;
+  color: #c9ced7;
+  cursor: pointer;
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+.themeButton:hover {
+  background: #21252c;
+}
+
+.themeActive {
+  border-color: #5a90d8;
+  background: #21252c;
+  color: #fff;
+}
+
+.swatch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 20px;
+  border-radius: 4px;
+  border: 1px solid #4a4f59;
+  font-size: 0.65rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 0.4rem;
+}
+
+.field > span {
+  flex: 1;
+  color: #9aa0ab;
+}
+
+.field input[type='color'] {
+  width: 28px;
+  height: 22px;
+  padding: 0;
+  border: 1px solid #4a4f59;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+}
+
+.field code {
+  font-size: 0.68rem;
+  color: #7d838d;
+  width: 58px;
+}
+
+.hint {
+  margin: 0.6rem 0 0;
+  padding-top: 0.55rem;
+  border-top: 1px solid #2a2e36;
+  color: #7d838d;
+  font-size: 0.7rem;
+}
+
+.segmented {
+  display: flex;
+  border: 1px solid #4a4f59;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.segment,
+.segmentActive {
+  border: none;
+  background: none;
+  color: #9aa0ab;
+  cursor: pointer;
+  font-size: 0.68rem;
+  padding: 0.2rem 0.4rem;
+}
+
+.segment:hover {
+  background: #21252c;
+  color: #d5d9e0;
+}
+
+.segmentActive {
+  background: #5a90d8;
+  color: #0e1015;
+  font-weight: 600;
+}

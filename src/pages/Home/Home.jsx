@@ -20,9 +20,10 @@ export default function Home() {
         </div>
         <div className={styles.welcomeText}>
           <h1>Luke Meyers</h1>
-          <p>Computer Vision researcher with a special passion for biology and ecology. Field conditions and long tailed distributions of biological applications provide unique
-            challenges for machine learning, but unique opportunities to utilize the rich research history of the field to inform model design and training. I’m particularly interested in how we can leverage the structure of biological data to build more
-            efficient and effective models, and how we can use machine learning to gain new insights into the natural world.
+          <p>Interdisciplinary researcher applying computer vision to ecological research. I have a strong computational background in deep learning and computer vision, especially fine grained visual categorization. In recent years, 
+            as more and more of us walk around with a professional level camera in our pocket, immense amounts of ecological imagery are being ammased online through citizen science platforms like iNaturalist and Ebird. I am excited to see what new insights can emerge from these data sources, 
+            and how we can use this knowlegde to conserve and protect our ecosystems in a changing world. 
+            
           </p>
         </div>
       </section>

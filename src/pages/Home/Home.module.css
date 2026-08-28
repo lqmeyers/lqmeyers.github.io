@@ -98,7 +98,7 @@
 
 .imageCard:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--card-shadow);
 }
 
 .imageWrapper {
@@ -113,7 +113,7 @@
 .imageOverlay {
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.55);
+  background: var(--overlay-bg);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -126,7 +126,7 @@
 }
 
 .overlayCaption {
-  color: #fff;
+  color: var(--overlay-text);
   font-size: 1.2rem;
   font-weight: 600;
   text-align: center;
